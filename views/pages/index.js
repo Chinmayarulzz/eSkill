@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import Layout from '../components/layout';
+import About from './about';
+import Hello from './blog/hello-world';
 
-function Home() {
+export default function Home() {
   return (
     <>
       <Head>
@@ -10,22 +12,32 @@ function Home() {
           Test Next.js
         </title>
       </Head>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/about">About Us</Link>
-        </li>
-        <li>
-          <Link href="/blog/hello-world">Blog Post</Link>
-        </li>
-      </ul>
+      <Layout>
+        <div>
+        <ul>
+          <div>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+          </div>
+          <div>
+            <li>
+              <Link href="/about">About Us</Link>
+              <About></About>
+            </li>
+          </div>
+          <div>
+            <li>
+              <Link href="/blog/hello-world">Blog Post</Link>
+              <Hello></Hello>
+            </li>
+          </div>
+        </ul>
+        </div>
+      </Layout>
     </>
   )
 }
-
-export default Home
 
 // export default function Home() {
 //   return (
